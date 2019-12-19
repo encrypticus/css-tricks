@@ -1,0 +1,282 @@
+@import './settings';
+
+.burger {
+  display: inline-block;
+  width: $width;
+  padding: 0;
+  line-height: 30px;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+
+  > span {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: $height;
+    font-size: 0;
+    background-color: $color;
+    border-radius: $border-radius;
+    vertical-align: middle;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: $height;
+      background-color: $color;
+      border-radius: $border-radius;
+      transform-origin: 50% 50%;
+      transform: rotate(0deg);
+    }
+
+    &::before {
+      top: 10px;
+    }
+
+    &::after {
+      top: -10px;
+    }
+  }
+
+  &--active {
+    > span {
+      background-color: transparent;
+
+      &::before,
+      &::after {
+        top: 0;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  /*
+    ############################ FLIP EFFECT ######################
+    ###############################################################
+  */
+
+  &--flip {
+    > span {
+      transition: background-color $duration $duration;
+
+      &::before,
+      &::after {
+        transition: transform $duration, top $duration $duration;
+      }
+    }
+  }
+
+  &--flip.burger--active {
+    > span {
+      transition: background-color $duration;
+
+      &::before,
+      &::after {
+        transition: top $duration, transform $duration $duration;
+      }
+    }
+  }
+
+  /*
+    ############################ ROTATE EFFECT ######################
+    #################################################################
+  */
+
+  &--rotate {
+    > span {
+      transition: background-color $duration $delay;
+
+      &::before {
+        transition: transform $duration, top $duration $delay;
+      }
+
+      &::after {
+        transition: transform $duration $duration, top $duration $delay;
+      }
+    }
+  }
+
+  &--rotate.burger--active {
+    > span {
+      transition: background-color $duration;
+
+      &::before {
+        transform: rotate(225deg);
+        transition: top $duration, transform $duration $duration;
+      }
+
+      &::after {
+        transform: rotate(315deg);
+        transition: top $duration, transform $duration $delay;
+      }
+    }
+  }
+
+  /*
+    ############################ ARROW-LEFT EFFECT ######################
+    #####################################################################
+  */
+
+  &--arrow-left {
+    > span {
+      background-color: $color;
+
+      &::before,
+      &::after {
+        transform-origin: left center;
+        transition: transform $duration, width $duration, top $duration;
+      }
+    }
+  }
+
+  &--arrow-left.burger--active {
+    > span {
+
+      &::before,
+      &::after {
+        width: 50%;
+        transition: transform $duration, width $duration, top $duration;
+      }
+
+      &::before {
+        transform: rotate(35deg);
+      }
+
+      &::after {
+        transform: rotate(-35deg);
+      }
+    }
+  }
+
+  /*
+    ############################ ARROW-RIGHT EFFECT ######################
+    ######################################################################
+  */
+
+  &--arrow-right {
+    > span {
+
+      &::before,
+      &::after {
+        transform-origin: right center;
+        transition: transform $duration, top $duration, width $duration;
+      }
+    }
+  }
+
+  &--arrow-right.burger--active {
+    > span {
+      background-color: $color;
+
+      &::before,
+      &::after {
+        width: 50%;
+        transition: transform $duration, top $duration, width $duration;
+      }
+
+      &::before {
+        transform: translateX(100%) rotate(-35deg);
+      }
+
+      &::after {
+        transform: translateX(100%) rotate(35deg);
+
+      }
+    }
+  }
+
+  /*
+    ############################ ARROW-TURN-LEFT EFFECT ######################
+    ######################################################################
+  */
+
+  &--arrow-turn-left {
+    transition: transform $duration;
+    transform: rotate(0deg);
+
+    > span {
+
+      &::before,
+      &::after {
+        transform-origin: right center;
+        transition: transform $duration, top $duration;
+      }
+    }
+  }
+
+  &--arrow-turn-left.burger--active {
+    transition: transform $duration;
+    transform: rotate(-180deg);
+
+    > span {
+      background-color: $color;
+
+      &::before,
+      &::after {
+        transition: transform $duration, top $duration;
+      }
+
+      &::before {
+        transform: translateX(-1px) rotate(-45deg) scaleX(.7);
+      }
+
+      &::after {
+        transform: translateX(-1px) rotate(45deg) scaleX(.7);
+
+      }
+    }
+  }
+
+  /*
+    ############################ ARROW-TURN-RIGHT EFFECT ######################
+    ######################################################################
+  */
+
+  &--arrow-turn-right {
+    transition: transform $duration;
+    transform: rotate(0deg);
+
+    > span {
+      background-color: $color;
+
+      &::before,
+      &::after {
+        transform-origin: left center;
+        transition: transform $duration, top $duration;
+      }
+    }
+  }
+
+  &--arrow-turn-right.burger--active {
+    transition: transform $duration;
+    transform: rotate(180deg);
+
+    > span {
+
+      &::before,
+      &::after {
+        transition: transform $duration, top $duration;
+      }
+
+      &::before {
+        transform: translateX(1px) rotate(45deg) scaleX(.7);
+      }
+
+      &::after {
+        transform: translateX(1px) rotate(-45deg) scaleX(.7);
+      }
+    }
+  }
+
+}

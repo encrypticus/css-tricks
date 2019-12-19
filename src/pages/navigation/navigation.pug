@@ -1,0 +1,15 @@
+extends ../../pug/layout
+include ../../pug/includes
+
+block title
+  title Navigation
+
+block append style
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Cuprum&display=swap&subset=cyrillic" rel="stylesheet">
+
+block content
+  body
+    header.page-header
+      +main-nav('1')
+
