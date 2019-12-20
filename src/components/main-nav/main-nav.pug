@@ -17,6 +17,14 @@ mixin main-nav(selectedID)
                             +main-nav-sublist(4)
                               each menuItem4 in menuItem3.children
                                 +main-nav-item(selectedID, menuItem4, 4)
+                                  if (typeof menuItem4.children !== 'undefined' && menuItem4.children)
+                                    +main-nav-sublist(5)
+                                      each menuItem5 in menuItem4.children
+                                        +main-nav-item(selectedID, menuItem5, 5)
+                                          if (typeof menuItem5.children !== 'undefined' && menuItem5.children)
+                                            +main-nav-sublist(6)
+                                              each menuItem6 in menuItem5.children
+                                                +main-nav-item(selectedID, menuItem6, 6)
 
 
 mixin main-nav-item(selectedID, item, level)
