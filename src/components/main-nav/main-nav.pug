@@ -3,29 +3,17 @@ mixin main-nav(selectedID)
 
   nav.main-nav&attributes(attributes)
     ul.main-nav__list.main-nav__list_level-1
-      each menuItem in mainMenu
-        +main-nav-item(selectedID, menuItem, 1)
-          if (typeof menuItem.children !== 'undefined' && menuItem.children)
-            +main-nav-sublist(2)
-              each menuItem2 in menuItem.children
-                +main-nav-item(selectedID, menuItem2, 2)
-                  if (typeof menuItem2.children !== 'undefined' && menuItem2.children)
-                    +main-nav-sublist(3)
-                      each menuItem3 in menuItem2.children
-                        +main-nav-item(selectedID, menuItem3, 3)
-                          if(typeof menuItem3.children !== 'undefined' && menuItem3.children)
-                            +main-nav-sublist(4)
-                              each menuItem4 in menuItem3.children
-                                +main-nav-item(selectedID, menuItem4, 4)
-                                  if (typeof menuItem4.children !== 'undefined' && menuItem4.children)
-                                    +main-nav-sublist(5)
-                                      each menuItem5 in menuItem4.children
-                                        +main-nav-item(selectedID, menuItem5, 5)
-                                          if (typeof menuItem5.children !== 'undefined' && menuItem5.children)
-                                            +main-nav-sublist(6)
-                                              each menuItem6 in menuItem5.children
-                                                +main-nav-item(selectedID, menuItem6, 6)
+      - mainNav(mainMenu)
 
+  - function mainNav(menu) {
+      - for (var i = 0; i < menu.length; i++) {
+          +main-nav-item(selectedID, menu[i], menu[i].level)
+            - if (typeof menu[i].children !== 'undefined') {
+                +main-nav-sublist(menu[i].level + 1)
+                  - mainNav(menu[i].children);
+            - }
+      - }
+  - }
 
 mixin main-nav-item(selectedID, item, level)
   -
