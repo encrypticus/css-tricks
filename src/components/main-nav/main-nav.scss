@@ -1,15 +1,15 @@
 @import '../../sass/utils';
 
 .main-nav {
-  $block-name: &;
+  $block-name: &; // имя блока - .main-nav
 
-  &__list {
+  &__list { // списки
     margin: 0;
     padding: 0;
     list-style-type: none;
     user-select: none;
 
-    &_level-1 {
+    &_level-1 { // список верхнего уровня - главное меню
       display: flex;
       justify-content: center;
       transform: none !important;
@@ -19,7 +19,7 @@
       }
     }
 
-    &:not(&_level-1) {
+    &:not(&_level-1) { // все вложенные списки
       position: absolute;
       opacity: 0;
       min-width: 100%;
@@ -27,11 +27,11 @@
       transform-origin: center top;
     }
 
-    &_level-2 {
+    &_level-2 { // списки 2го уровня
       transform: scaleY(0);
     }
 
-    &:not(&_level-2) {
+    &:not(&_level-2) { // списки не 2го уровня
       top: 0;
 
       @include for-phone-landscape-down {
@@ -40,20 +40,20 @@
       }
     }
 
-    &_visible {
+    &_visible { // все видимые списки. Класс добавляется посредством js компонента
       transition: transform .5s, opacity .4s;
     }
 
-    &_level-2#{$block-name}__list_visible {
+    &_level-2#{$block-name}__list_visible { // видимые списки 2го уровня
       transform-origin: center top;
       transform: scaleY(1);
     }
 
-    &:not(&_level-1)#{$block-name}__list_visible {
+    &:not(&_level-1)#{$block-name}__list_visible { // видимые списки не 1го уровня
       opacity: 1;
     }
 
-    &:not(&_level-2)#{$block-name}__list_visible {
+    &:not(&_level-2)#{$block-name}__list_visible { // видимые списки не 2го уровня
       transform: translateX(101%);
 
       @include for-phone-landscape-down {
@@ -62,7 +62,7 @@
     }
   }
 
-  &__item {
+  &__item { // элементы списков
     position: relative;
 
     @include for-phone-landscape-down {
@@ -70,10 +70,10 @@
       border-right: 0 !important;
     }
 
-    &_level-1 {
+    &_level-1 { // элементы списков 1го уровня
       border-right: 1px solid #c7c8ca;
 
-      #{$block-name}__link_level-1::before {
+      #{$block-name}__link_level-1::before { // декоративный элемент слева для ссылок элементов списка 1го уровня. Например - иконка
         position: absolute;
         top: 15px;
         left: 12px;
@@ -81,35 +81,35 @@
         font-size: 18px;
       }
 
-      &:first-child {
+      &:first-child { // декоративный элемент для 1го элемента списка верхнего уровня
 
         #{$block-name}__link_level-1::before {
           content: '\f015';
         }
       }
 
-      &:nth-child(2) {
+      &:nth-child(2) { // декоративный элемент для 2го элемента списка верхнего уровня
 
         #{$block-name}__link_level-1::before {
           content: '\f07a';
         }
       }
 
-      &:nth-child(3) {
+      &:nth-child(3) { // декоративный элемент для 3го элемента списка верхнего уровня
 
         #{$block-name}__link_level-1::before {
           content: '\f085';
         }
       }
 
-      &:nth-child(4) {
+      &:nth-child(4) { // декоративный элемент для 4го элемента списка верхнего уровня
 
         #{$block-name}__link_level-1::before {
           content: '\f00b';
         }
       }
 
-      &:nth-child(5) {
+      &:nth-child(5) { // декоративный элемент для 5го элемента списка верхнего уровня
 
         #{$block-name}__link_level-1::before {
           content: '\f2b6';
@@ -117,18 +117,18 @@
       }
     }
 
-    &:not(&_level-1) {
+    &:not(&_level-1) { // элементы списка не 1го уровня
       border: 1px solid #c7c8ca;
       border-top: 0;
     }
 
-    &:not(&_level-2) {
+    &:not(&_level-2) { // элементы списка не 2го уровня
       border-left: 0;
     }
 
-    &_has-child {
+    &_has-child { // элементы списка, содержащие вложенные списки(подменю)
 
-      > #{$block-name}__link::after {
+      > #{$block-name}__link::after { // декоративный элемент справа для ссылок элементов списка. Например - иконка
         content: '\f0d7';
         position: absolute;
         top: 15px;
@@ -138,7 +138,7 @@
       }
     }
 
-    &_has-child:not(&_level-1) {
+    &_has-child:not(&_level-1) { // декоративный элемент справа для ссылок элементов списка не 1го уровня(для вложенных подменю). Например - иконка
 
       > #{$block-name}__link::after {
         top: 12px;
@@ -150,17 +150,17 @@
       }
     }
 
-    &_level-1:first-child {
+    &_level-1:first-child { // 1ый элемент списка 1го уровня
       border-left: 1px solid #b2b3b5;
     }
 
-    &_level-1:last-child {
+    &_level-1:last-child { // последний элемент списка 1го уровня
       border-right: 1px solid #b2b3b5;;
     }
 
   }
 
-  &__link {
+  &__link { // ссылки
     position: relative;
     z-index: 200;
     display: block;
@@ -177,7 +177,7 @@
       z-index: auto;
     }
 
-    &:not(&_level-1) {
+    &:not(&_level-1) { // ссылки списков не 1го уровня
       padding: 10px;
       text-transform: none;
       background: #e4e4e5;
@@ -195,11 +195,11 @@
       }
     }
 
-    &_level-1 {
+    &_level-1 { // ссылки списков 1го уровня
       padding: 15px 30px 15px 40px;
     }
 
-    &_active {
+    &_active { // ссылки с классом "active", добавляемым посредством js компонента
 
       &::after {
         transform: rotate(180deg) !important;
