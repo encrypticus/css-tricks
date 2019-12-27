@@ -5,6 +5,7 @@ const sublists = document.querySelectorAll('.main-nav__item_has-child > .main-na
 const { body } = document;
 const { documentElement } = document;
 const { forEach } = Array.prototype;
+let zIndex = 2;
 
 function createMenu(list) {
   const listItems = list.children;
@@ -17,6 +18,8 @@ function createMenu(list) {
         const parentList = listItem.parentElement; // родительский список текущего элемента списка
         const siblings = parentList.children; // соседние элементы списка текущего элемента списка
         const childListSublists = childList.querySelectorAll('.main-nav__list'); // все дочерние списки любой глубины вложенности дочернего списка текущего элемента списка
+
+        childList.style.zIndex = ++zIndex;
 
         childLink.addEventListener('click', (event) => {
           event.preventDefault();
@@ -40,6 +43,7 @@ function createMenu(list) {
 
           // Скрыть/показать вложенный список
           childList.classList.toggle('main-nav__list_visible');
+          // childLink.classList.toggle('main-nav__link_active');
         });
 
         createMenu(childList);

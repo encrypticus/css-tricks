@@ -1,3 +1,5 @@
+@import '../../sass/utils';
+
 .main-nav {
   $block-name: &;
 
@@ -10,13 +12,18 @@
     &_level-1 {
       display: flex;
       justify-content: center;
+      transform: none !important;
+
+      @include for-phone-landscape-down {
+        display: block;
+      }
     }
 
     &:not(&_level-1) {
       position: absolute;
+      opacity: 0;
       min-width: 100%;
       transition: transform .5s, opacity .4s;
-      opacity: 0;
       transform-origin: center top;
     }
 
@@ -26,26 +33,42 @@
 
     &:not(&_level-2) {
       top: 0;
+
+      @include for-phone-landscape-down {
+        transform: scaleY(0);
+        top: 100%;
+      }
     }
 
     &_visible {
-      transition: transform .5s, opacity .4s !important;
-      transform: scaleY(1) !important;
-      opacity: 1 !important;
-
+      transition: transform .5s, opacity .4s;
     }
 
-    &_level-2#{block-name}__list_visible {
+    &_level-2#{$block-name}__list_visible {
       transform-origin: center top;
+      transform: scaleY(1);
+    }
+
+    &:not(&_level-1)#{$block-name}__list_visible {
+      opacity: 1;
     }
 
     &:not(&_level-2)#{$block-name}__list_visible {
-      transform: translateX(101%) !important;
+      transform: translateX(101%);
+
+      @include for-phone-landscape-down {
+        transform: scaleY(1);
+      }
     }
   }
 
   &__item {
     position: relative;
+
+    @include for-phone-landscape-down {
+      border-left: 0 !important;
+      border-right: 0 !important;
+    }
 
     &_level-1 {
       border-right: 1px solid #c7c8ca;
@@ -111,6 +134,7 @@
         top: 15px;
         right: 12px;
         font-family: Fontawesome, Arial, sans-serif;
+        transition: transform .5s;
       }
     }
 
@@ -119,6 +143,10 @@
       > #{$block-name}__link::after {
         top: 12px;
         transform: rotate(-90deg);
+
+        @include for-phone-landscape-down {
+          transform: none;
+        }
       }
     }
 
@@ -134,7 +162,7 @@
 
   &__link {
     position: relative;
-    z-index: 2;
+    z-index: 200;
     display: block;
     font-size: 14px;
     color: #454547;
@@ -144,6 +172,10 @@
     text-transform: uppercase;
     transition: all .5s ease;
     cursor: pointer;
+
+    @include for-tablet-landscape-down {
+      z-index: auto;
+    }
 
     &:not(&_level-1) {
       padding: 10px;
@@ -165,6 +197,13 @@
 
     &_level-1 {
       padding: 15px 30px 15px 40px;
+    }
+
+    &_active {
+
+      &::after {
+        transform: rotate(180deg) !important;
+      }
     }
   }
 }
