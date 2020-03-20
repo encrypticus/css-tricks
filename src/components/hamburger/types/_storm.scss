@@ -1,10 +1,7 @@
 @if index($hamburger-types, storm) {
 
   .hamburger--storm {
-
-    .hamburger-inner {
-      perspective: $hamburger-layer-width * 2;
-    }
+    perspective: $hamburger-layer-width * 3;
 
     .line-top {
       transition: top .2s .2s, transform .2s;
