@@ -1,9 +1,10 @@
 @if index($hamburger-types, juggler) {
 
   .hamburger--juggler {
+    outline: none;
 
     .line-center {
-      transition: opacity .3s .2s;
+      transition: opacity 1s .2s;
     }
 
     .line-top {
@@ -12,6 +13,14 @@
 
     .line-bottom {
       transition: bottom .3s .2s cubic-bezier(0.135, 1.650, 1.000, 1.650), transform .2s;
+    }
+
+    .line-center-left {
+      transition: left .3s .2s;
+    }
+
+    .line-center-right {
+      transition: right .3s .2s;
     }
 
     .line-top-left {
@@ -34,7 +43,7 @@
 
       .line-center {
         opacity: 0;
-        transition: .1s .3s;
+        transition: .3s;
       }
 
       .line-top {
@@ -47,6 +56,16 @@
         bottom: $center-position;
         transform: rotate(-45deg);
         transition: bottom .3s, transform .2s .3s;
+      }
+
+      .line-center-left {
+        left: -50%;
+        transition: left .3s;
+      }
+
+      .line-center-right {
+        right: -50%;
+        transition: right .3s;
       }
 
       .line-top-left {
