@@ -11,9 +11,11 @@ $center-position: calc(50% - #{$hamburger-layer-height} / 2);
 $hamburger-types: (
   simple,
   collapse,
-  storm
+  storm,
+  juggler
 ) !default;
 
 @import 'types/simple';
 @import 'types/collapse';
 @import 'types/storm';
+@import 'types/juggler';
