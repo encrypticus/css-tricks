@@ -66,9 +66,8 @@
   }
 
   .line-center {
-    top: 50%;
+    top: $center-position;
     left: 0;
-    margin-top: $hamburger-layer-height / -2;
   }
 
   .line-bottom {

@@ -5,8 +5,7 @@
     &.is-active {
 
       .line-top {
-        top: 50%;
-        margin-top: $hamburger-layer-height / -2;
+        top: $center-position;
         transform: rotate(45deg);
       }
 
@@ -15,8 +14,7 @@
       }
 
       .line-bottom {
-        bottom: 50%;
-        margin-bottom: $hamburger-layer-height / -2;
+        bottom: $center-position;
         transform: rotate(-45deg);
       }
     }
