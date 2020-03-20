@@ -41,12 +41,15 @@
   .line-top-left,
   .line-center-left,
   .line-bottom-left {
+    top: 0;
+    left: 0;
     border-radius: $hamburger-layer-border-radius 0 0 $hamburger-layer-border-radius;
   }
 
   .line-top-right,
   .line-center-right,
   .line-bottom-right {
+    top: 0;
     right: 0;
     border-radius: 0 $hamburger-layer-border-radius $hamburger-layer-border-radius 0;
   }
