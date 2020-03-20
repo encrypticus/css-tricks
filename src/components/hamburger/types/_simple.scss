@@ -1,0 +1,24 @@
+@if index($hamburger-types, simple) {
+
+  .hamburger--simple {
+
+    &.is-active {
+
+      .line-top {
+        top: 50%;
+        margin-top: $hamburger-layer-height / -2;
+        transform: rotate(45deg);
+      }
+
+      .line-center {
+        opacity: 0;
+      }
+
+      .line-bottom {
+        bottom: 50%;
+        margin-bottom: $hamburger-layer-height / -2;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

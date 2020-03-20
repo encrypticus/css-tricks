@@ -1,0 +1,14 @@
+$hamburger-layer-width: 40px !default;
+$hamburger-layer-height: 4px !default;
+$hamburger-layer-spacing: 6px !default;
+$hamburger-padding: 10px !default;
+$hamburger-layer-border-radius: 4px !default;
+$hamburger-layer-color: #000;
+
+@import 'base';
+
+$hamburger-types: (
+  simple
+) !default;
+
+@import 'types/simple';
