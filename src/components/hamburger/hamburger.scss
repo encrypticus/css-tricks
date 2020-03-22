@@ -15,7 +15,8 @@ $hamburger-types: (
   juggler,
   shurikens,
   shurikens-r,
-  shurikens-alt
+  shurikens-alt,
+  shurikens-alt-r
 ) !default;
 
 @import 'types/simple';
@@ -25,3 +26,4 @@ $hamburger-types: (
 @import 'types/shurikens';
 @import 'types/shurikens-r';
 @import 'types/shurikens-alt';
+@import 'types/shurikens-alt-r';
