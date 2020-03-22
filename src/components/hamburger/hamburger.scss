@@ -20,7 +20,8 @@ $hamburger-types: (
   minify,
   arrowturn,
   arrowturn-r,
-  arrowdown
+  arrowdown,
+  arrowdown-r
 ) !default;
 
 @import 'types/simple';
@@ -35,3 +36,4 @@ $hamburger-types: (
 @import 'types/arrowturn';
 @import 'types/arrowturn-r';
 @import 'types/arrowdown';
+@import 'types/arrowdown-r';
