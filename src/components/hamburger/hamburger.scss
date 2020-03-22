@@ -12,10 +12,12 @@ $hamburger-types: (
   simple,
   collapse,
   storm,
-  juggler
+  juggler,
+  shurikens
 ) !default;
 
 @import 'types/simple';
 @import 'types/collapse';
 @import 'types/storm';
 @import 'types/juggler';
+@import 'types/shurikens';
