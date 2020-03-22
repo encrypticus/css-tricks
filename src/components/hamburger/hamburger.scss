@@ -21,7 +21,8 @@ $hamburger-types: (
   arrowturn,
   arrowturn-r,
   arrowdown,
-  arrowdown-r
+  arrowdown-r,
+  magic
 ) !default;
 
 @import 'types/simple';
@@ -37,3 +38,4 @@ $hamburger-types: (
 @import 'types/arrowturn-r';
 @import 'types/arrowdown';
 @import 'types/arrowdown-r';
+@import 'types/magic';
