@@ -41,14 +41,14 @@
       }
 
       .line-center-left {
-        left: 50%;
+        left: 100%;
         transform: rotate(360deg);
         opacity: 0;
         transition: left .2s .2s cubic-bezier(0.135, 1.650, 1.000, 1.650), transform .2s .2s, opacity .2s .2s;
       }
 
       .line-center-right {
-        right: -100%;
+        right: -50%;
         transform: rotate(360deg);
         opacity: 0;
         transition: right .2s cubic-bezier(0.135, 1.650, 1.000, 1.650), transform .2s, opacity .2s;
