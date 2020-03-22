@@ -17,7 +17,8 @@ $hamburger-types: (
   shurikens-r,
   shurikens-alt,
   shurikens-alt-r,
-  minify
+  minify,
+  arrowturn
 ) !default;
 
 @import 'types/simple';
@@ -29,3 +30,4 @@ $hamburger-types: (
 @import 'types/shurikens-alt';
 @import 'types/shurikens-alt-r';
 @import 'types/minify';
+@import 'types/arrowturn';
