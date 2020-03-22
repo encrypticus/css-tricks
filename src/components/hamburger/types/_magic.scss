@@ -3,6 +3,19 @@
   .hamburger--magic {
     perspective: $hamburger-layer-width;
 
+    .line-top {
+      transition: .2s;
+    }
+
+    .line-bottom {
+      transition: .2s;
+    }
+
+    .line-center-left,
+    .line-center-right {
+      transition: transform .4s, top .4s, opacity .4s;
+    }
+
     &.is-active {
 
       .line-top {
