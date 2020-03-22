@@ -14,7 +14,8 @@ $hamburger-types: (
   storm,
   juggler,
   shurikens,
-  shurikens-r
+  shurikens-r,
+  shurikens-alt
 ) !default;
 
 @import 'types/simple';
@@ -23,3 +24,4 @@ $hamburger-types: (
 @import 'types/juggler';
 @import 'types/shurikens';
 @import 'types/shurikens-r';
+@import 'types/shurikens-alt';
