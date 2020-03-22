@@ -1,7 +1,6 @@
 @if index($hamburger-types, juggler) {
 
   .hamburger--juggler {
-    outline: none;
 
     .line-center {
       transition: opacity 1s .2s;

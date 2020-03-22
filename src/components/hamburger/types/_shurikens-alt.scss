@@ -1,7 +1,6 @@
 @if index($hamburger-types, shurikens-alt) {
 
   .hamburger--shurikens-alt {
-    outline: none;
 
     .hamburger-inner {
       transition: .2s;

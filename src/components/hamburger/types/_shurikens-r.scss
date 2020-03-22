@@ -1,7 +1,6 @@
 @if index($hamburger-types, shurikens-r) {
 
   .hamburger--shurikens-r {
-    outline: none;
 
     .hamburger-inner {
       transition: .2s;
