@@ -24,7 +24,8 @@ $hamburger-types: (
   arrowdown-r,
   magic,
   3d,
-  alchemy
+  alchemy,
+  alchemy-r
 ) !default;
 
 @import 'types/simple';
@@ -43,3 +44,4 @@ $hamburger-types: (
 @import 'types/magic';
 @import 'types/3d';
 @import 'types/alchemy';
+@import 'types/alchemy-r';
