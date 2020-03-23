@@ -3,7 +3,7 @@ $hamburger-layer-height: 4px !default;
 $hamburger-layer-spacing: 6px !default;
 $hamburger-padding: 10px !default;
 $hamburger-layer-border-radius: 4px !default;
-$hamburger-layer-color: #fff;
+$hamburger-layer-color: #000;
 $center-position: calc(50% - #{$hamburger-layer-height} / 2);
 
 @import 'base';
@@ -23,7 +23,8 @@ $hamburger-types: (
   arrowdown,
   arrowdown-r,
   magic,
-  3d
+  3d,
+  alchemy
 ) !default;
 
 @import 'types/simple';
@@ -41,3 +42,4 @@ $hamburger-types: (
 @import 'types/arrowdown-r';
 @import 'types/magic';
 @import 'types/3d';
+@import 'types/alchemy';
